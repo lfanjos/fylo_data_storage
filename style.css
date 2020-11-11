@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+html {
+  font-size: 62.5%;
+  color: white;
+  font-family: "Raleway", sans-serif;
+}
+
+p {
+  font-size: 1.4rem;
+  margin: 1rem auto;
+}
+
+body {
+  background-image: url(/images/bg-desktop.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #0c122c;
+}
+.data-storage {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 500px;
+  width: 70%;
+  height: auto;
+  margin: auto;
+}
+
+.main-header {
+  background-color: #1e2c69;
+  padding: 2.5rem;
+  padding-right: 12rem;
+  border-radius: 0.5rem 9rem 0.5rem 0.5rem;
+}
+
+.file-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 120%;
+}
+
+.file-buttons div {
+  margin-top: 2rem;
+  display: flex;
+  height: 4rem;
+  width: 4rem;
+  background-color: hsl(229, 57%, 11%);
+  padding: 1rem;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-buttons div img {
+  width: 100%;
+}
+
+.main-storage {
+  width: 100%;
+  background-color: #1e2c69;
+  margin-left: 2rem;
+  padding: 2.5rem;
+  border-radius: 1rem;
+}
+
+.indicators {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
