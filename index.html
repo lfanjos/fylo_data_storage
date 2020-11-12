@@ -41,10 +41,24 @@
         </div>
       </header>
       <main class="main-storage">
-        <div class="storage-left">185 GB Left</div>
+        <div id="storage-left">
+          <span class="smaller"> Select Usage...</span>
+        </div>
         <div class="storage">
-          <p>You’ve used <b>815 GB</b> of your storage</p>
-          <input type="range" name="used" id="storage-used" max="1000" />
+          <p>You’ve used <b id="storage-used">0 GB</b> of your storage</p>
+          <div class="slider">
+            <input
+              type="range"
+              name="used"
+              id="slider-bar"
+              max="1000"
+              value="500"
+            />
+            <div id="selector">
+              <div class="select-btn"></div>
+            </div>
+            <div id="progress-bar"></div>
+          </div>
           <div class="indicators">
             <div><p>0GB</p></div>
             <div><p>1000GB</p></div>
@@ -56,7 +70,30 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="https://github.com/lfanjos">Lfanjos</a>.
     </div>
+    <script>
+      var slider = document.getElementById("slider-bar");
+      var selector = document.getElementById("selector");
+      var storageleft = document.getElementById("storage-left");
+      var storageused = document.getElementById("storage-used");
+      var progressbar = document.getElementById("progress-bar");
+
+      slider.oninput = function () {
+        if (Math.min(this.value * 0.1, 99) < 1) {
+          selector.style.left = 1 + "%";
+          storageleft.innerHTML =
+            1000 - this.value + "<span class='smaller'> GB Left</span>";
+          storageused.innerHTML = this.value + " GB";
+          progressbar.style.width = this.value * 0.1 + "%";
+        } else {
+          selector.style.left = Math.min(this.value * 0.1, 99) + "%";
+          storageleft.innerHTML =
+            1000 - this.value + " <span class='smaller'> GB Left</span>";
+          storageused.innerHTML = this.value + " GB";
+          progressbar.style.width = this.value * 0.1 + "%";
+        }
+      };
+    </script>
   </body>
 </html>
