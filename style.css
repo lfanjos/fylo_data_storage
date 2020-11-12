@@ -175,3 +175,25 @@ body {
     hsl(335, 100%, 65%)
   );
 }
+
+@media (max-width: 740px) {
+  .data-storage {
+    flex-direction: column;
+    margin: 150px auto;
+    width: 70%;
+  }
+
+  .data-storage header {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  .main-storage {
+    margin: auto;
+  }
+
+  .file-buttons {
+    width: 150%;
+    margin: auto;
+  }
+}
